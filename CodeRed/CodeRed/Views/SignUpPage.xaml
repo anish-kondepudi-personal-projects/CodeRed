@@ -1,16 +1,17 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:CodeRed.ViewModels"
-             x:Class="CodeRed.Views.LoginPage">
+             x:Class="CodeRed.Views.SignUpPage">
     <ContentPage.BindingContext>
-        <viewModels:LoginPageViewModel />
+        <viewModels:SignUpPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <!-- Add your desired fields for sign up, e.g., Name, Email, Password -->
+            <Entry Placeholder="Name" x:Name="NameEntry" />
             <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry" />
             <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
-            <Button Text="Login" Command="{Binding LoginCommand}" />
             <Button Text="Sign Up" Command="{Binding SignUpCommand}" />
         </StackLayout>
     </ContentPage.Content>

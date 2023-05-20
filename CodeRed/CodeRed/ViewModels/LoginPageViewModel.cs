@@ -20,7 +20,8 @@ namespace CodeRed.ViewModels
 
         private void OnSignUpClicked()
         {
-            // Logic for sign up button click
+            // Navigate to the SignUpPage
+            App.Current.MainPage.Navigation.PushAsync(new Views.SignUpPage());
         }
     }
 }
