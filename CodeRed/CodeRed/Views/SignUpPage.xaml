@@ -9,9 +9,9 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <!-- Add your desired fields for sign up, e.g., Name, Email, Password -->
-            <Entry Placeholder="Name" x:Name="NameEntry" />
-            <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry" />
-            <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
+            <Entry Placeholder="Name" x:Name="NameEntry" Text="{Binding Name}" />
+            <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry" Text="{Binding Email}" />
+            <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" Text="{Binding Password}" />
             <Button Text="Sign Up" Command="{Binding SignUpCommand}" />
         </StackLayout>
     </ContentPage.Content>
