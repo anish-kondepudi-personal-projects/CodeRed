@@ -1,0 +1,17 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CodeRed.ViewModels"
+             x:Class="CodeRed.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:LoginPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry" />
+            <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
+            <Button Text="Login" Command="{Binding LoginCommand}" />
+            <Button Text="Sign Up" Command="{Binding SignUpCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
