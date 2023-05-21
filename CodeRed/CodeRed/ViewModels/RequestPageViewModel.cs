@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using CodeRed.Models;
 using Xamarin.Forms;
+using System;
 
 namespace CodeRed.ViewModels
 {
@@ -49,7 +50,19 @@ namespace CodeRed.ViewModels
 
         private void Request()
         {
-            // Handle the request logic here
+            CalculateTotalPrice();
+            string prods = "";
+            foreach (var product in Products)
+            {
+                if (product.Product.Quantity == 0) continue;
+                prods += $"{product.Product.Quantity.ToString()} {product.Product.Name}, ";
+            }
+            prods.Substring(prods.Length - 3);
+            var firstMessage = $"You requested {prods} for a total of ${totalPrice.ToString()}.";
+            var destinationPageViewModel = new ChatPageViewModel(firstMessage);
+            var destinationPage = new Views.ChatPage(destinationPageViewModel);
+            App.Current.MainPage.Navigation.PushAsync(destinationPage);
+
         }
     }
 }
