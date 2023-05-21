@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
+using CodeRed.Views;
 
 namespace CodeRed.ViewModels
 {
@@ -22,11 +23,15 @@ namespace CodeRed.ViewModels
             // For example, you can navigate to another page or perform some action
         }
 
-        private void SupplyButtonClicked()
+        private async void SupplyButtonClicked()
         {
             // Handle the logic for the "Supply" button click here
             // For example, you can navigate to another page or perform some action
+
+            await Application.Current.MainPage.Navigation.PushAsync(new SupplyPage());
         }
+
+
     }
 }
 
