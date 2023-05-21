@@ -2,7 +2,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CodeRed.Views"
              xmlns:viewmodels="clr-namespace:CodeRed.ViewModels"
-             x:Class="CodeRed.Views.SupplyPage">
+             x:Class="CodeRed.Views.SupplyPage" BackgroundColor="#FBDBFC">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="BackgroundColor" Value="Pink" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="BackgroundColor" Value="LightPink"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
     <ContentPage.BindingContext>
         <viewmodels:SupplyViewModel />
     </ContentPage.BindingContext>
@@ -18,9 +40,9 @@
             <CollectionView ItemsSource="{Binding Orders}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Margin="10" Padding="10" CornerRadius="5" BackgroundColor="LightGray"
+                        <Frame Margin="10" Padding="10" CornerRadius="5" BackgroundColor="HotPink"
                                IsVisible="{Binding IsVisible}">
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Vertical" BackgroundColor="HotPink">
                                 <Label Text="{Binding Price, StringFormat='${0:F2}'}" FontSize="18" />
                                 <Label Text="{Binding ProductsString}" FontSize="16" />
                                 <Label Text="{Binding Distance}" FontSize="16" />
@@ -28,7 +50,7 @@
 
                                 <!-- Accept and Reject Buttons -->
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Button Text="Accept" Clicked="AcceptButton_Clicked" />
+                                    <Button Text="Accept" Clicked="AcceptButton_Clicked"/>
                                     <Button Text="Reject" Clicked="RejectButton_Clicked" CommandParameter="{Binding .}" />
                                 </StackLayout>
                             </StackLayout>

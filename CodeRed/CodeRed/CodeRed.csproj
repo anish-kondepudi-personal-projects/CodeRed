@@ -15,9 +15,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Images\LoginBG.png" />
     <None Remove="Views\" />
     <None Remove="ViewModels\" />
     <None Remove="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\LoginBG.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\SignUpPage.xaml">
