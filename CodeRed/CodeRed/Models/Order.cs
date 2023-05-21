@@ -1,21 +1,37 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace CodeRed.Models
 {
-    [DataContract]
-    public class Order
+    public class Order : INotifyPropertyChanged
     {
-        [DataMember]
+        private bool isVisible;
+
         public decimal Price { get; set; }
-
-        [DataMember]
         public List<string> Products { get; set; }
-
-        [DataMember]
         public double Distance { get; set; }
-
-        [DataMember]
         public string UserName { get; set; }
+
+        public string ProductsString => string.Join(", ", Products);
+
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set
+            {
+                if (isVisible != value)
+                {
+                    isVisible = value;
+                    OnPropertyChanged(nameof(IsVisible));
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using CodeRed.Models;
-using CodeRed.Models;
 
 namespace CodeRed.ViewModels
 {
@@ -21,9 +20,6 @@ namespace CodeRed.ViewModels
                 }
             }
         }
-
-        // Other necessary code for the view model
-        // ...
 
         public event PropertyChangedEventHandler PropertyChanged;
 
