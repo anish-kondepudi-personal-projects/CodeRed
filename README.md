@@ -62,3 +62,9 @@ For the future of "Code Red," some potential next steps could include:
 7. Connect with payment processing service to facilitate financial transactions between users.
 8. Implement a rating system to phase out unreliable suppliers.
 
+## Product Images
+
+![Login page](ReadMeAssets/login.png)
+![Request Page](ReadMeAssets/request.png)
+![Supply Page](ReadMeAssets/supply.png)
+![Chat Page](ReadMeAssets/chat.png)
