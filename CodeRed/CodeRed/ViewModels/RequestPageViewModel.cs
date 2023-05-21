@@ -22,9 +22,12 @@ namespace CodeRed.ViewModels
         {
             Products = new ObservableCollection<ProductViewModel>
             {
-                new ProductViewModel(new ProductModel("Product 1", (decimal)1.5, 0), CalculateTotalPrice),
-                new ProductViewModel(new ProductModel("Product 2", (decimal)2.0, 0), CalculateTotalPrice),
-                new ProductViewModel(new ProductModel("Product 2", (decimal)2.5, 0), CalculateTotalPrice)
+                new ProductViewModel(new ProductModel("Tampon", (decimal)2.25, 0), CalculateTotalPrice),
+                new ProductViewModel(new ProductModel("Pad", (decimal)1.5, 0), CalculateTotalPrice),
+                new ProductViewModel(new ProductModel("Diva Cup", (decimal)3.0, 0), CalculateTotalPrice),
+                new ProductViewModel(new ProductModel("Period Underwear", (decimal)5.5, 0), CalculateTotalPrice),
+                new ProductViewModel(new ProductModel("Liner", (decimal)1.5, 0), CalculateTotalPrice),
+                new ProductViewModel(new ProductModel("Maxi Pad", (decimal)2.25, 0), CalculateTotalPrice)
                 // Add more products as needed
             };
 
