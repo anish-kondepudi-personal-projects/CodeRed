@@ -1,17 +1,58 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:CodeRed.ViewModels"
-             x:Class="CodeRed.Views.LoginPage">
+             x:Class="CodeRed.Views.LoginPage" BackgroundColor="#FBDBFC">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True" >
+                <Setter Property="BackgroundImageSource" Value="LoginBG.png" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="BackgroundColor" Value="Pink" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.BindingContext>
         <viewModels:LoginPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry" />
-            <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
-            <Button Text="Login" Command="{Binding LoginCommand}" />
-            <Button Text="Sign Up" Command="{Binding SignUpCommand}" />
-        </StackLayout>
+        <Grid>
+            
+            
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                  RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="Auto">
+
+                <Label Text="CodeRed" HorizontalOptions="Center" TextColor="HotPink"
+                       Grid.Row="0" FontSize="50" Margin="10"/>
+
+                <Entry Placeholder="Email" Keyboard="Email" x:Name="EmailEntry"
+                       PlaceholderColor="#BBBBBB" TextColor="#333333"
+                       Grid.Row="1" />
+
+                <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry"
+                       PlaceholderColor="#BBBBBB" TextColor="#333333"
+                       Grid.Row="2" />
+
+                <Button Text="Login" Command="{Binding LoginCommand}"
+                        BackgroundColor="HotPink" TextColor="White" CornerRadius="5"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="3" />
+
+                <Button Text="Sign Up" Command="{Binding SignUpCommand}"
+                        BackgroundColor="DeepPink" TextColor="White" CornerRadius="5"
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="4" />
+
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -2,14 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:CodeRed.ViewModels"
-             x:Class="CodeRed.Views.HomePage">
+             x:Class="CodeRed.Views.HomePage" BackgroundColor="#FBDBFC">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.BindingContext>
         <viewModels:HomePageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Request" Command="{Binding RequestCommand}" />
-            <Button Text="Supply" Command="{Binding SupplyCommand}" />
+            <Button Text="Request" Command="{Binding RequestCommand}" BackgroundColor="HotPink" TextColor="White" CornerRadius="5"
+                        HorizontalOptions="FillAndExpand" Padding="50" Margin="10"/>
+            <Button Text="Supply" Command="{Binding SupplyCommand}" BackgroundColor="HotPink" TextColor="White" CornerRadius="5"
+                        HorizontalOptions="FillAndExpand" Padding="50" Margin="10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
