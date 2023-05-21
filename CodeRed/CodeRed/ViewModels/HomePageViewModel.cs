@@ -21,6 +21,7 @@ namespace CodeRed.ViewModels
         {
             // Handle the logic for the "Request" button click here
             // For example, you can navigate to another page or perform some action
+            App.Current.MainPage.Navigation.PushAsync(new Views.RequestPage());
         }
 
         private async void SupplyButtonClicked()

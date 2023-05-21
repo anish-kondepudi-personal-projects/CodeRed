@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CodeRed.ViewModels"
+             x:Class="CodeRed.Views.RequestPage"
+             x:Name="requestPage">
+    <ContentPage.BindingContext>
+        <vm:RequestPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout Padding="10" Spacing="10">
+                    <CollectionView ItemsSource="{Binding Products}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10" BackgroundColor="LightCyan">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Product.Name}" VerticalOptions="Center" />
+                                        <Label Text="{Binding Product.Price, StringFormat='Total Price: ${0:F2}'}" VerticalOptions="Center" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                        <Button Text="-" Command="{Binding DecrementCommand}" VerticalOptions="Center" />
+                                        <Label Text="{Binding Product.Quantity}" VerticalOptions="Center" />
+                                        <Button Text="+" Command="{Binding IncrementCommand}" VerticalOptions="Center" />
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+
+            <StackLayout Orientation="Horizontal" Padding="10,10,10,0" HorizontalOptions="Center">
+                <Label Text="{Binding TotalPrice, StringFormat='Total Price: ${0:F2}'}" FontSize="20" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Button Text="Request" Command="{Binding RequestCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
