@@ -47,6 +47,9 @@ namespace CodeRed.Views
             // Handle accept button click
             var acceptedProduct = (sender as Button)?.BindingContext as Order;
             // Perform actions for accepting the product
+            var destinationPageViewModel = new ChatPageViewModel("You are now connected with the requester. You may now work together to agree on a location.");
+            var destinationPage = new Views.ChatPage(destinationPageViewModel);
+            App.Current.MainPage.Navigation.PushAsync(destinationPage);
         }
 
         private void RejectButton_Clicked(object sender, EventArgs e)
