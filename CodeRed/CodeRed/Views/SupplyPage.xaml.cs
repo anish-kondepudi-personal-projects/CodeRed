@@ -17,18 +17,18 @@ namespace CodeRed.Views
                 {
                     new Order
                     {
-                        Price = 10.99m,
-                        Products = new List<string> { "Product 1", "Product 2", "Product 3" },
+                        Price = 9.00m,
+                        Products = new List<string> { "2 Tampons", "3 Pads" },
                         Distance = 2.5,
-                        UserName = "John Doe",
+                        UserName = "Anna",
                         IsVisible = true
                     },
                     new Order
                     {
-                        Price = 15.49m,
-                        Products = new List<string> { "Product 4", "Product 5" },
+                        Price = 4.50m,
+                        Products = new List<string> { "3 Pads"},
                         Distance = 4.2,
-                        UserName = "Jane Smith",
+                        UserName = "Bella",
                         IsVisible = true
                     }
                 }

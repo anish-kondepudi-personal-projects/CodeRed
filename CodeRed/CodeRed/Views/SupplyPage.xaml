@@ -43,11 +43,11 @@
                         <Frame Margin="10" Padding="10" CornerRadius="5" BackgroundColor="HotPink"
                                IsVisible="{Binding IsVisible}">
                             <StackLayout Orientation="Vertical" BackgroundColor="HotPink">
+                                <Label Text="{Binding UserName}" FontSize="16" />
                                 <Label Text="{Binding Price, StringFormat='${0:F2}'}" FontSize="18" />
                                 <Label Text="{Binding ProductsString}" FontSize="16" />
-                                <Label Text="{Binding Distance}" FontSize="16" />
-                                <Label Text="{Binding UserName}" FontSize="16" />
-
+                                <Label Text="{Binding Distance, StringFormat='{0:F2} miles away'}" FontSize="16" />
+                               
                                 <!-- Accept and Reject Buttons -->
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                     <Button Text="Accept" Clicked="AcceptButton_Clicked"/>
