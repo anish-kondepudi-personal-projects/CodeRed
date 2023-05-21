@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using CodeRed.Views;
+using Xamarin.Forms;
 
 namespace CodeRed.ViewModels
 {
@@ -16,6 +17,7 @@ namespace CodeRed.ViewModels
         private void OnLoginClicked()
         {
             // Logic for login button click
+            App.Current.MainPage = new NavigationPage(new Views.HomePage());
         }
 
         private void OnSignUpClicked()

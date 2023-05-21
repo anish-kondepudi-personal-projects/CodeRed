@@ -40,6 +40,7 @@ namespace CodeRed.ViewModels
             Debug.WriteLine("Password: " + Password);
 
             // Logic for sign up button click
+            App.Current.MainPage = new NavigationPage(new Views.HomePage());
         }
     }
 }
